@@ -1,0 +1,37 @@
+<div class="container">
+  <h2>Product Listing</h2>
+
+  <div class="filter-container">
+    <input type="text" [(ngModel)]="searchQuery" (input)="onSearchChange()" placeholder="Search products...">
+    <select [(ngModel)]="selectedCategory" (change)="filterByCategory()">
+      <option value="All">All Categories</option>
+      <ng-container *ngFor="let category of uniqueCategories()">
+        <option [value]="category">{{ category }}</option>
+      </ng-container>
+    </select>
+    
+  </div>
+
+  <ul class="suggestions" *ngIf="suggestions.length">
+    <li *ngFor="let suggestion of suggestions" (click)="selectSuggestion(suggestion)">{{ suggestion }}</li>
+  </ul>
+
+  <div class="products">
+    <div class="product-card" *ngFor="let product of paginatedProducts">
+      <img [src]="product.imageUrl" alt="{{ product.name }}" class="product-image">
+      <div class="product-details">
+        <h3>{{ product.name }}</h3>
+        <p>{{ product.description }}</p>
+        <p><strong>Category:</strong> {{ product.category }}</p>
+        <p><strong>Price:</strong> ${{ product.price }}</p>
+        <p><strong>Rating:</strong> ⭐{{ product.rating }}</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="pagination">
+    <button (click)="prevPage()" [disabled]="currentPage === 1">Previous</button>
+    <span>Page {{ currentPage }}</span>
+    <button (click)="nextPage()" [disabled]="currentPage * itemsPerPage >= filteredProducts.length">Next</button>
+  </div>
+</div>
