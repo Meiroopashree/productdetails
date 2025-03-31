@@ -24,6 +24,7 @@ input[type="text"], select {
   display: block;
 }
 
+
 /* Suggestions */
 .suggestions {
   list-style: none;
@@ -32,10 +33,9 @@ input[type="text"], select {
   background: white;
   border: 1px solid #ddd;
   border-radius: 5px;
-  max-width: 90%;
-  width: 100%;
-  margin-left: auto;
-  margin-right: auto;
+  max-width: 30%;
+  margin-left: 10%;
+  
 }
 
 .suggestions li {
@@ -48,6 +48,7 @@ input[type="text"], select {
   background: #3498db;
   color: white;
 }
+
 
 /* Filter Container */
 .filter-container {
