@@ -34,8 +34,6 @@ input[type="text"], select {
   border: 1px solid #ddd;
   border-radius: 5px;
   max-width: 30%;
-  margin-left: 10%;
-  
 }
 
 .suggestions li {
