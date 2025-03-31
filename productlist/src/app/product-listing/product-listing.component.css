@@ -160,3 +160,39 @@ input[type="text"], select {
     font-size: 12px;
   }
 }
+
+/* Extra Small Screens (Below 340px) */
+@media (max-width: 340px) {
+  .container {
+    padding: 10px;
+  }
+
+  input[type="text"], select {
+    font-size: 14px;
+    padding: 8px;
+  }
+
+  .filter-container {
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  .products {
+    grid-template-columns: 1fr;
+  }
+
+  .product-card {
+    padding: 5px;
+  }
+
+  .pagination {
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  .pagination button {
+    width: 100%;
+    font-size: 12px;
+    padding: 6px;
+  }
+}
